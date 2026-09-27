@@ -7,7 +7,7 @@ historical weather windows.
 ## Dataset
 
 [`london_weather.csv`](https://drive.google.com/file/d/1mRTi_ZiuFinPnqHpm_XFFuGUdjnY87Hq/view)
-— historical daily weather recorded near Heathrow Airport, London
+- historical daily weather recorded near Heathrow Airport, London
 (1979–2020), 10 columns: `date, cloud_cover, sunshine, global_radiation,
 max_temp, mean_temp, min_temp, precipitation, pressure, snow_depth`.
 
