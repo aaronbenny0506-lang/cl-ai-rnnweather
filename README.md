@@ -1,4 +1,4 @@
-# Weather Prediction using RNN (Task 10 — 200 Karma)
+# Weather Prediction using RNN 
 
 Predicts next-day weather (mean/max/min temperature and precipitation) for
 London using an LSTM-based recurrent neural network trained on 14-day
@@ -26,7 +26,7 @@ which saves it to `data/london_weather.csv`.
    - Parse `date`, sort chronologically.
    - Fill the small gaps in the ECA-sourced measurements with linear
      interpolation.
-   - Chronological 85/15 train/test split (no shuffling — future rows never
+   - Chronological 85/15 train/test split (no shuffling, future rows never
      leak into training, and the split happens *before* scaling).
    - Features scaled to `[0, 1]` with `MinMaxScaler`, fit on the training
      split only.
@@ -47,13 +47,13 @@ which saves it to `data/london_weather.csv`.
 4. **Evaluation & visualization**
    - MSE and MAE computed per target on the held-out test set, after
      inverse-scaling predictions back to real units (°C / mm).
-   - `outputs/actual_vs_predicted.png` — actual vs. predicted next-day mean
+   - `outputs/actual_vs_predicted.png`, actual vs. predicted next-day mean
      temperature over the test period.
-   - `outputs/metrics.csv` — per-target MSE/MAE.
+   - `outputs/metrics.csv`, per-target MSE/MAE.
 
 ## Results
 
-Test-set metrics (real units — °C for temperatures, mm for precipitation):
+Test-set metrics (real units °C for temperatures, mm for precipitation):
 
 | Target        | MSE   | MAE   |
 |---------------|-------|-------|
@@ -63,8 +63,8 @@ Test-set metrics (real units — °C for temperatures, mm for precipitation):
 | precipitation | 13.56 | 2.32  |
 
 The model predicts next-day mean temperature within about 1°C on average.
-Precipitation is harder to predict — it's noisy and right-skewed (most days
-are dry with occasional heavy-rain spikes) — which shows up as the larger
+Precipitation is harder to predict, it's noisy and right-skewed (most days
+are dry with occasional heavy-rain spikes), which shows up as the larger
 MSE.
 
 ![Actual vs predicted mean temperature](outputs/actual_vs_predicted.png)
@@ -80,7 +80,3 @@ python train.py
 Outputs (`outputs/weather_rnn.keras`, `outputs/metrics.csv`,
 `outputs/actual_vs_predicted.png`) are written after training.
 
-## Resources used
-
-- [RNN YouTube playlist](https://www.youtube.com/playlist?list=PLcXD2UVHZ2NBS-uBiA99gjGylfor0f_Dr)
-- [PyTorch RNN docs](https://docs.pytorch.org/docs/stable/generated/torch.nn.RNN.html)
